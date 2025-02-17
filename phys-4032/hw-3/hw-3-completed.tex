@@ -145,6 +145,13 @@ As a reminder, the full Maxwell-Ampère law is
 \nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) + \mu_0\epsilon_0\frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]
 	\label{eq:maxwell-ampere-law}
 \end{equation}
+For this problem, we define the electric field with Coulomb's law:
+\begin{equation}
+\vec{E}(\vec{r}, t) = \frac{1}{4\pi\epsilon_0} \int \rho(\vec{r}, t)\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}d\tau'
+	\label{eq:coulomb-law}
+\end{equation}
+As we showed in the first part, the charge density varies linearly in time and the current density is independent of time. Because $\rho$ is changing, however, we have:
+$$ \nabla \cdot \vec{J} = -\frac{\partial}{\partial t} \rho $$.
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
