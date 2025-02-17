@@ -207,6 +207,33 @@ $$
   \quad\text{as our vector field.}
 $$
 
+Then, using integration by parts (and assuming that any surface term vanishes at infinity):
+$$
+  \int_{V} \bigl[\nabla' \cdot \mathbf{J}(\mathbf{r}')\bigr]
+  f(\mathbf{r}')d\tau'=\underbrace{\oint_{S} f \mathbf{J}\cdot d\mathbf{a}'}_{\text{vanishes}} -\int_{V} \mathbf{J}(\mathbf{r}') \cdot \bigl[\nabla' f(\mathbf{r}')\bigr] d\tau'.
+$$
+So, 
+$$
+  -\mu_0 \epsilon_0 \frac{1}{4\pi\epsilon_0}
+  \int \nabla' \cdot \mathbf{J}(\mathbf{r}') \frac{\hat{R}}{R^2}
+  d\tau'=\mu_0 \epsilon_0 \frac{1}{4\pi\epsilon_0} \int \mathbf{J}(\mathbf{r}') \cdot \nabla' \Bigl[\frac{\hat{R}}{R^2}\Big] d\tau'.
+$$
+
+Putting it all together, we see that the total curl of $\mathbf{B}$ is:
+$$
+  \nabla \times \mathbf{B}(\mathbf{r})=\mu_0\mathbf{J}(\mathbf{r})+\mu_0\epsilon_0\frac{\partial}{\partial t}\Bigl[\mathbf{E}(\mathbf{r},t)\Bigr].
+$$
+When we include the extra term arising from 
+$\partial\rho/\partial t$ (and thus from $\partial\mathbf{E}/\partial t$), the “missing piece” is exactly the displacement current term $\mu_0\epsilon_0\partial\mathbf{E}/\partial t$.  This confirms that a Biot–Savart style $\mathbf{B}$ field \emph{does} satisfy Ampère’s law \emph{including} 
+Maxwell’s correction, provided $\rho$ and $\mathbf{J}$ obey the continuity equation.
+
+$$
+\underline{\boxed{
+   \nabla \times \mathbf{B}(\mathbf{r})=
+   \mu_0\mathbf{J}(\mathbf{r})+
+   \mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}(\mathbf{r},t)}}
+$$
+
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 
