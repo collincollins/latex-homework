@@ -185,6 +185,14 @@ $$\int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime}=\underbrace
 $f$ is only a function of the source coordinate $\overrightarrow{r}'$ with $\vec{r}$ held fixed.
 Assuming our surface term vanishes at infinity, we are left with
 $$ \int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime} = -\int_V \vec{J} \cdot \nabla^{\prime} f d \tau^{\prime} $$
+Lets replace our previous integral:
+$$ -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \nabla' \cdot \vec{J}(\overrightarrow{r}') \frac{\hat{R}}{{R^2}} d\tau' \quad\rightarrow\quad -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0} \left[-\int_V \vec{J} \cdot \nabla^{\prime} \frac{\hat{R}}{{R^2}} d \tau^{\prime}\right] $$
+Cancelling the negatives and using $\nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] = 4\pi\delta^3(\vec{r} - \overrightarrow{r}')$, we have
+$$ \boxed{\frac{\mu_0}{4\pi} \int_{V} 4\pi\vec{J}\delta^3(\vec{r} - \overrightarrow{r}')d\tau' \quad\rightarrow\quad \mu_0\vec{J}(\vec{r})}$$
+This is the additional (time-dependent $E$ field) term that is produced in our full Maxwell-Ampère law:
+$$ \nabla \times \vec{B}(\vec{r}) = \underbrace{\mu_0\vec{J}(\vec{r})}_{\text{static}} + \underbrace{\mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]}_{\text{time dep. term: }\mu_0\vec{J}(\vec{r})} \quad\rightarrow\quad \underline{\boxed{\nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) = 2\mu_0\vec{J}(\vec{r})}} $$
+
+This result seems trivial and incorrect.
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
