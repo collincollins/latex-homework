@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. document class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\documentclass[a4paper,12pt]{article} % this defines the style of your paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2. packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top = 2.5cm, bottom = 2.5cm, left = 2.5cm, right = 2.5cm]{geometry} 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% the following two packages - multirow and booktabs - are needed to create nice looking tables.
+\usepackage{multirow} % multirow is for tables with multiple rows within one cell.
+\usepackage{booktabs} % for even nicer tables.
+
+% as we usually want to include some plots (.pdf files) we need a package for that.
+\usepackage{graphicx} 
+
+% the default setting of LaTeX is to indent new paragraphs. this is useful for articles. but not really nice for homework problem sets. the following command sets the indent to 0.
+\usepackage{setspace}
+\setlength{\parindent}{0in}
+
+% package to place figures where you want them.
+\usepackage{float}
+
+% the fancyhdr package lets us create nice headers.
+\usepackage{fancyhdr}
+
+% citing references will be hyperlinked and blue
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{amsmath}
+
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. header (and footer)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% to make our document nice we want a header and number the pages in the footer.
+
+\pagestyle{fancy} % with this command we can customize the header style.
+
+\fancyhf{} % this makes sure we do not have other information in our header or footer.
+
+\lhead{\footnotesize E\&M II}% \lhead puts text in the top left corner. \footnotesize sets our font to a smaller size.
+
+%\rhead works just like \lhead (you can also use \chead)
+\rhead{\footnotesize Collins}
+
+% similar commands work for the footer (\lfoot, \cfoot and \rfoot).
+% we want to put our page number in the center.
+\cfoot{\footnotesize \thepage} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title section of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty} % this command disables the header on the first page. 
+
+\begin{tabular}{p{15.5cm}} % this is a simple tabular environment to align your text nicely 
+{\large \bf Homework 3}
+\\ Collin Collins \\
+PHYS 4032\\
+17 February 2025 \\
+\hline % \hline produces horizontal lines.
+\end{tabular} % our tabular environment ends here.
+
+%%%%%%equations that are commonly used%%%%%%%%%%
+% \textbf{u}^\prime = \frac{\textbf{u} - \textbf{v}}{1 - \frac{\textbf{uv}}{c^2}}
+%
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Problem 1}
+Suppose $\vec{J}(\vec{r})$ is constant in time but $\rho(\vec{r}, t)$ is not-conditions that might prevail, for instance, during the charging of a capacitor.\\
+\subsection*{Part (a)}
+(a) Show that the charge density at any particular point is a linear function of time:
+$$
+\rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t
+$$
+where $\dot{\rho}(\vec{r}, 0)$ is the time derivative of $\rho$ at $t=0$.\\
+\subsubsection*{------------------------------------------Solution-----------------------------------------------}
+Seeing $\vec{J}(\vec{r})$ and $\rho(\vec{r}, t)$ makes me think to use the continuity equation:
+\begin{equation}
+\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r}, t)=0
+	\label{eq:cont-eq}
+\end{equation}
+Here, we can use the information given, namely that $\vec{J}(\vec{r})$ is independent of time:
+$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r}, t)=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r})=0 $$
+Rearranging things in a typical way for dealing with differential equations:
+$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r})=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]=- \nabla \cdot \vec{J}(\vec{r})$$
+At this point, I see a partial derivative in time that I'd like to remove (to obtain the form of the final result we are asked to prove). Let's do that by integrating both sides with respect to $t'$:
+$$ \int_{t'=0}^{t'=t} \frac{\partial}{\partial t'}\Big[\rho(\vec{r}, t')\Big] dt' = -\int \nabla \cdot \vec{J}(\vec{r}) dt' $$
+Immediately, my left-hand-side can be simplified with the fundamental theorem of calculus. On the right-hand-side, remember that the integrand is independent of time, and therefore we can treat it as a constant.
+$$ \rho(\vec{r}, t) - \rho(\vec{r}, 0) = -\nabla\cdot\vec{J}(\vec{r})t \quad\rightarrow\quad \rho(\vec{r}, t) = \rho(\vec{r}, 0) -\nabla\cdot\vec{J}(\vec{r})t  $$
+We are almost there. The form on the right seems contrived because it is. I want to make it look like the form we were asked to prove: $\rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t$. Now, we just have to clarify how $\dot{\rho}(\vec{r}, 0) = -\nabla\cdot\vec{J}(\vec{r})$. For that let's remember our earlier result:
+$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]=-\nabla \cdot \vec{J}(\vec{r}) $$
+If this is true for all $t$, then it is certainly true for $t=0$:
+
+$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, 0)\Big]=-\nabla \cdot \vec{J}(\vec{r}) \quad\rightarrow\quad \dot{\rho}(\vec{r}, 0)=-\nabla \cdot \vec{J}(\vec{r})  $$
+Let's make this substitution in $\rho(\vec{r}, t)=\rho(\vec{r}, 0)-\nabla \cdot \vec{J}(\vec{r}) t$.
+$$\underline{\boxed{\rho(\vec{r}, t)=\rho(\vec{r}, 0)-\nabla \cdot \vec{J}(\vec{r}) t \quad\rightarrow\quad \rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t}} $$
+
+
+
+
+\subsubsection*{-----------------------------------------------------------------------------------------------------}
+\subsection*{Part (b)}
+This is not an electrostatic or magnetostatic configuration; nevertheless-rather surprisingly-both Coulomb's law (in the form of Eq. 2.8) and the Biot-Savart law (Eq. 5.39) hold, as you can confirm by showing that they satisfy Maxwell's equations. In particular:\\
+
+(b) Show that
+
+$$
+\vec{B}(\vec{r})=\frac{\mu_0}{4 \pi} \int \frac{\vec{J}\left(\overrightarrow{r}'\right) \times \hat{R}}{R^2} d \tau^{\prime}
+$$
+
+obeys Ampere's law with Maxwell's displacement current term.
+Part b will be considered as extra credit in case you want to turn-in this corrected version.
+
+\subsubsection*{------------------------------------------Solution-----------------------------------------------}
+Note that since I don't want to install additional \LaTeX  packages and switch to manual typesetting, I will use $R$ as the separation vector.
+
+\subsubsection*{-----------------------------------------------------------------------------------------------------}
+
+
+
+
+
+
+\end{document}
