@@ -175,7 +175,16 @@ $$ \boxed{\vec{B}(\vec{r})=\frac{\mu_0}{4 \pi} \int 4\pi\vec{J}(\overrightarrow{
 This is not the end of the problem, as we are not working with a time-independent configuration.\\
 
 Continuing, we consider the time dependent electric field term in Eq [\ref{eq:maxwell-ampere-law}]:
-$$  \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big] $$
+$$  \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big] = \mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \underbrace{\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]}_{\text{cont. eq.}} \frac{\hat{R}}{{R^2}} d\tau' $$
+By the continuity equation:
+$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big] = -\nabla' \cdot \vec{J}(\overrightarrow{r}') $$
+Making the substitution in the integrand:
+$$ \mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \underbrace{\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]}_{\text{cont. eq.}} \frac{\hat{R}}{{R^2}} d\tau' \quad\rightarrow\quad -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \nabla' \cdot \vec{J}(\overrightarrow{r}') \frac{\hat{R}}{{R^2}} d\tau' $$
+Let $ f(\overrightarrow{r}') =: \frac{\hat{R}}{{R^2}} $ be our scalar function and $ \vec{J}(\overrightarrow{r}') $ be our vector field, using integration by parts:
+$$\int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime}=\underbrace{\oint_S f \vec{J} \cdot d \overrightarrow{a}^{\prime}}_{\text{surface term}}-\int_V \vec{J} \cdot \nabla^{\prime} f d \tau^{\prime}$$
+$f$ is only a function of the source coordinate $\overrightarrow{r}'$ with $\vec{r}$ held fixed.
+Assuming our surface term vanishes at infinity, we are left with
+$$ \int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime} = -\int_V \vec{J} \cdot \nabla^{\prime} f d \tau^{\prime} $$
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
