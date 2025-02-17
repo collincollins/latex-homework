@@ -142,16 +142,37 @@ Note that since I don't want to install additional \LaTeX  packages and switch t
 
 As a reminder, the full Maxwell-Ampère law is
 \begin{equation}
-\nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) + \mu_0\epsilon_0\frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]
+\nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) + \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]
 	\label{eq:maxwell-ampere-law}
 \end{equation}
 For this problem, we define the electric field with Coulomb's law:
 \begin{equation}
-\vec{E}(\vec{r}, t) = \frac{1}{4\pi\epsilon_0} \int \rho(\vec{r}, t)\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}d\tau'
+\vec{E}(\vec{r}, t) = \frac{1}{4\pi\epsilon_0} \int \rho(\overrightarrow{r}', t)\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}d\tau'
 	\label{eq:coulomb-law}
 \end{equation}
 As we showed in the first part, the charge density varies linearly in time and the current density is independent of time. Because $\rho$ is changing, however, we have:
 $$ \nabla \cdot \vec{J} = -\frac{\partial}{\partial t} \rho $$.
+To account for this non-divergence-free current, we have see the need for the additional term in Eq [\ref{eq:maxwell-ampere-law}]: $\mu_0\epsilon_0\frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]$, which provides the missing contribution of current from the static version of Ampère's law.\\
+
+Let's simplify the notation here with
+$$ \hat{R} =: \frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|} \quad \text{and} \quad R =: |\vec{r} - \overrightarrow{r}'| $$
+The magnetic field is
+$$ \vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \vec{J}(\overrightarrow{r}')\times \frac{\hat{R}}{R^2} d\tau' $$
+Taking the curl, we have
+$$ \nabla \times \vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \nabla \times \left[ \vec{J}(\overrightarrow{r}')\times \frac{\hat{R}}{R^2} \right] d\tau'$$
+Let's have
+$$ \vec{a} =: \vec{J}(\overrightarrow{r}') \quad\text{and}\quad \vec{A}(\vec{r}) =: \frac{\hat{R}}{R^2} $$
+We remember the vector identity
+$$ \nabla\times\left(\vec{a} \times \vec{A}(\vec{r})\right) = \vec{a}\left(\nabla\cdot\vec{A}(\vec{r})\right) - \left(\vec{a}\cdot\nabla\right)\vec{A}(\vec{r}) $$
+Since $\vec{a}$ is independent of $\vec{r}$, the second term of our vector identity vanishes and we are left with
+$$ \nabla\times\left(\vec{a} \times \vec{A}(\vec{r})\right) = \vec{a}\left(\nabla\cdot\vec{A}(\vec{r})\right) \quad\rightarrow\quad \vec{J}(\overrightarrow{r}')\nabla \cdot \frac{\hat{R}}{R^2} $$
+From PHYS 4031, we learned that
+$$ \nabla \cdot \frac{\hat{R}}{R^2} \quad\rightarrow\quad \nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] = 4\pi\delta^3(\vec{r} - \overrightarrow{r}') $$
+Therefore
+$$ \vec{J}(\overrightarrow{r}')\nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] \quad\rightarrow\quad 4\pi\vec{J}(\overrightarrow{r}')\delta^3(\vec{r} - \overrightarrow{r}') $$
+Making this substitution into integral given in the problem statement,
+$$ \boxed{\vec{B}(\vec{r})=\frac{\mu_0}{4 \pi} \int 4\pi\vec{J}(\overrightarrow{r}')\delta^3(\vec{r} - \overrightarrow{r}') d \tau^{\prime} = \mu_0\vec{J}(\vec{r})} $$
+This is not the end of the problem, as we are not working with a time-independent configuration.
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
