@@ -92,34 +92,34 @@ PHYS 4032\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Problem 1}
-Suppose $\vec{J}(\vec{r})$ is constant in time but $\rho(\vec{r}, t)$ is not-conditions that might prevail, for instance, during the charging of a capacitor.\\
+Suppose $\mathbf{J}(\mathbf{r})$ is constant in time but $\rho(\mathbf{r}, t)$ is not-conditions that might prevail, for instance, during the charging of a capacitor.\\
 \subsection*{Part (a)}
 (a) Show that the charge density at any particular point is a linear function of time:
 $$
-\rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t
+\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t
 $$
-where $\dot{\rho}(\vec{r}, 0)$ is the time derivative of $\rho$ at $t=0$.\\
+where $\dot{\rho}(\mathbf{r}, 0)$ is the time derivative of $\rho$ at $t=0$.\\
 \subsubsection*{------------------------------------------Solution-----------------------------------------------}
-Seeing $\vec{J}(\vec{r})$ and $\rho(\vec{r}, t)$ makes me think to use the continuity equation:
+Seeing $\mathbf{J}(\mathbf{r})$ and $\rho(\mathbf{r}, t)$ makes me think to use the continuity equation:
 \begin{equation}
-\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r}, t)=0
+\frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]+\nabla \cdot \mathbf{J}(\mathbf{r}, t)=0
 	\label{eq:cont-eq}
 \end{equation}
-Here, we can use the information given, namely that $\vec{J}(\vec{r})$ is independent of time:
-$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r}, t)=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r})=0 $$
+Here, we can use the information given, namely that $\mathbf{J}(\mathbf{r})$ is independent of time:
+$$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]+\nabla \cdot \mathbf{J}(\mathbf{r}, t)=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]+\nabla \cdot \mathbf{J}(\mathbf{r})=0 $$
 Rearranging things in a typical way for dealing with differential equations:
-$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]+\nabla \cdot \vec{J}(\vec{r})=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]=- \nabla \cdot \vec{J}(\vec{r})$$
+$$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]+\nabla \cdot \mathbf{J}(\mathbf{r})=0 \quad\rightarrow\quad \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]=- \nabla \cdot \mathbf{J}(\mathbf{r})$$
 At this point, I see a partial derivative in time that I'd like to remove (to obtain the form of the final result we are asked to prove). Let's do that by integrating both sides with respect to $t'$:
-$$ \int_{t'=0}^{t'=t} \frac{\partial}{\partial t'}\Big[\rho(\vec{r}, t')\Big] dt' = -\int \nabla \cdot \vec{J}(\vec{r}) dt' $$
+$$ \int_{t'=0}^{t'=t} \frac{\partial}{\partial t'}\Big[\rho(\mathbf{r}, t')\Big] dt' = -\int \nabla \cdot \mathbf{J}(\mathbf{r}) dt' $$
 Immediately, my left-hand-side can be simplified with the fundamental theorem of calculus. On the right-hand-side, remember that the integrand is independent of time, and therefore we can treat it as a constant.
-$$ \rho(\vec{r}, t) - \rho(\vec{r}, 0) = -\nabla\cdot\vec{J}(\vec{r})t \quad\rightarrow\quad \rho(\vec{r}, t) = \rho(\vec{r}, 0) -\nabla\cdot\vec{J}(\vec{r})t  $$
-We are almost there. The form on the right seems contrived because it is. I want to make it look like the form we were asked to prove: $\rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t$. Now, we just have to clarify how $\dot{\rho}(\vec{r}, 0) = -\nabla\cdot\vec{J}(\vec{r})$. For that let's remember our earlier result:
-$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]=-\nabla \cdot \vec{J}(\vec{r}) $$
+$$ \rho(\mathbf{r}, t) - \rho(\mathbf{r}, 0) = -\nabla\cdot\mathbf{J}(\mathbf{r})t \quad\rightarrow\quad \rho(\mathbf{r}, t) = \rho(\mathbf{r}, 0) -\nabla\cdot\mathbf{J}(\mathbf{r})t  $$
+We are almost there. The form on the right seems contrived because it is (you've given me the answer and I want whatever I'm doing to be guided by that form). So I've rearranged things to resemble the form we were asked to prove: $\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t$. Now, we just have to clarify how $\dot{\rho}(\mathbf{r}, 0) = -\nabla\cdot\mathbf{J}(\mathbf{r})$. For that let's remember our earlier result:
+$$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]=-\nabla \cdot \mathbf{J}(\mathbf{r}) $$
 If this is true for all $t$, then it is certainly true for $t=0$:
 
-$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, 0)\Big]=-\nabla \cdot \vec{J}(\vec{r}) \quad\rightarrow\quad \dot{\rho}(\vec{r}, 0)=-\nabla \cdot \vec{J}(\vec{r})  $$
-Let's make this substitution in $\rho(\vec{r}, t)=\rho(\vec{r}, 0)-\nabla \cdot \vec{J}(\vec{r}) t$.
-$$\underline{\boxed{\rho(\vec{r}, t)=\rho(\vec{r}, 0)-\nabla \cdot \vec{J}(\vec{r}) t \quad\rightarrow\quad \rho(\vec{r}, t)=\rho(\vec{r}, 0)+\dot{\rho}(\vec{r}, 0) t}} $$
+$$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, 0)\Big]=-\nabla \cdot \mathbf{J}(\mathbf{r}) \quad\rightarrow\quad \dot{\rho}(\mathbf{r}, 0)=-\nabla \cdot \mathbf{J}(\mathbf{r})  $$
+Let's make this substitution in $\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)-\nabla \cdot \mathbf{J}(\mathbf{r}) t$.
+$$\underline{\boxed{\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)-\nabla \cdot \mathbf{J}(\mathbf{r}) t \quad\rightarrow\quad \rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t}} $$
 
 
 
@@ -131,68 +131,81 @@ This is not an electrostatic or magnetostatic configuration; nevertheless-rather
 (b) Show that
 
 $$
-\vec{B}(\vec{r})=\frac{\mu_0}{4 \pi} \int \frac{\vec{J}\left(\overrightarrow{r}'\right) \times \hat{R}}{R^2} d \tau^{\prime}
+\mathbf{B}(\mathbf{r})=\frac{\mu_0}{4 \pi} \int \frac{\mathbf{J}\left(\mathbf{r}'\right) \times \hat{R}}{R^2} d \tau^{\prime}
 $$
 
 obeys Ampere's law with Maxwell's displacement current term.
 Part b will be considered as extra credit in case you want to turn-in this corrected version.
 
 \subsubsection*{------------------------------------------Solution-----------------------------------------------}
-Note that since I don't want to install additional \LaTeX  packages and switch to manual typesetting, I will use $R$ as the separation vector $|R| =: |\vec{r} - \overrightarrow{r}'| $\\
+Note that since I don't want to install additional \LaTeX  packages and switch to manual typesetting, I will use $R$ as the separation vector $|R| =: |\mathbf{r} - \mathbf{r}'| $\\
 
 As a reminder, the full Maxwell-Ampère law is
 \begin{equation}
-\nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) + \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]
+\nabla \times \mathbf{B}(\mathbf{r}) = \mu_0\mathbf{J}(\mathbf{r}) + \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\mathbf{E}(\mathbf{r}, t)\Big]
 	\label{eq:maxwell-ampere-law}
 \end{equation}
 For this problem, we define the electric field with Coulomb's law:
 \begin{equation}
-\vec{E}(\vec{r}, t) = \frac{1}{4\pi\epsilon_0} \int \rho(\overrightarrow{r}', t)\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}d\tau'
+\mathbf{E}(\mathbf{r}, t) = \frac{1}{4\pi\epsilon_0} \int \rho(\mathbf{r}', t)\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3}d\tau'
 	\label{eq:coulomb-law}
 \end{equation}
 As we showed in the first part, the charge density varies linearly in time and the current density is independent of time. Because $\rho$ is changing, however, we have:
-$$ \nabla \cdot \vec{J} = -\frac{\partial}{\partial t} \rho $$.
-To account for this non-divergence-free current, we have see the need for the additional term in Eq [\ref{eq:maxwell-ampere-law}]: $\mu_0\epsilon_0\frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]$, which provides the missing contribution of current from the static version of Ampère's law.\\
+$$ \nabla \cdot \mathbf{J} = -\frac{\partial}{\partial t} \rho $$
+To account for this current, we have see the need for the additional term in Eq [\ref{eq:maxwell-ampere-law}]: $\mu_0\epsilon_0\frac{\partial}{\partial t} \Big[\mathbf{E}(\mathbf{r}, t)\Big]$, which provides the missing contribution of current from the static version of Ampère's law.\\
 
 Let's simplify the notation here with
-$$ \hat{R} =: \frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|} \quad \text{and} \quad R =: |\vec{r} - \overrightarrow{r}'| $$
+$$ \hat{R} =: \frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|} \quad \text{and} \quad R =: |\mathbf{r} - \mathbf{r}'| $$
 The magnetic field is
-$$ \vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \vec{J}(\overrightarrow{r}')\times \frac{\hat{R}}{R^2} d\tau' $$
+$$ \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int \mathbf{J}(\mathbf{r}')\times \frac{\hat{R}}{R^2} d\tau' $$
 Taking the curl, we have
-$$ \nabla \times \vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \nabla \times \left[ \vec{J}(\overrightarrow{r}')\times \frac{\hat{R}}{R^2} \right] d\tau'$$
-Let's have
-$$ \vec{a} =: \vec{J}(\overrightarrow{r}') \quad\text{and}\quad \vec{A}(\vec{r}) =: \frac{\hat{R}}{R^2} $$
+$$ \nabla \times \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int \nabla \times \left[ \mathbf{J}(\mathbf{r}')\times \frac{\hat{R}}{R^2} \right] d\tau'$$
+Let's let (hehe)
+$$ \mathbf{a} =: \mathbf{J}(\mathbf{r}') \quad\text{and}\quad \mathbf{A}(\mathbf{r}) =: \frac{\hat{R}}{R^2} $$
 We remember the vector identity
-$$ \nabla\times\left(\vec{a} \times \vec{A}(\vec{r})\right) = \vec{a}\left(\nabla\cdot\vec{A}(\vec{r})\right) - \left(\vec{a}\cdot\nabla\right)\vec{A}(\vec{r}) $$
-Since $\vec{a}$ is independent of $\vec{r}$, the second term of our vector identity vanishes and we are left with
-$$ \nabla\times\left(\vec{a} \times \vec{A}(\vec{r})\right) = \vec{a}\left(\nabla\cdot\vec{A}(\vec{r})\right) \quad\rightarrow\quad \vec{J}(\overrightarrow{r}')\nabla \cdot \frac{\hat{R}}{R^2} $$
+$$ \nabla\times\left(\mathbf{a} \times \mathbf{A}(\mathbf{r})\right) = \mathbf{a}\left(\nabla\cdot\mathbf{A}(\mathbf{r})\right) - \left(\mathbf{a}\cdot\nabla\right)\mathbf{A}(\mathbf{r}) $$
+Since $\mathbf{a}$ is independent of $\mathbf{r}$, the second term of our vector identity vanishes and we are left with
+$$ \nabla\times\left(\mathbf{a} \times \mathbf{A}(\mathbf{r})\right) = \mathbf{a}\left(\nabla\cdot\mathbf{A}(\mathbf{r})\right) \quad\rightarrow\quad \mathbf{J}(\mathbf{r}')\nabla \cdot \frac{\hat{R}}{R^2} $$
 From PHYS 4031, we learned that
-$$ \nabla \cdot \frac{\hat{R}}{R^2} \quad\rightarrow\quad \nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] = 4\pi\delta^3(\vec{r} - \overrightarrow{r}') $$
+$$ \nabla \cdot \frac{\hat{R}}{R^2} \quad\rightarrow\quad \nabla \cdot \left[\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3}\right] = 4\pi\delta^3(\mathbf{r} - \mathbf{r}') $$
 Therefore
-$$ \vec{J}(\overrightarrow{r}')\nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] \quad\rightarrow\quad 4\pi\vec{J}(\overrightarrow{r}')\delta^3(\vec{r} - \overrightarrow{r}') $$
+$$ \mathbf{J}(\mathbf{r}')\nabla \cdot \left[\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3}\right] \quad\rightarrow\quad 4\pi\mathbf{J}(\mathbf{r}')\delta^3(\mathbf{r} - \mathbf{r}') $$
 Making this substitution into integral given in the problem statement,
-$$ \boxed{\vec{B}(\vec{r})=\frac{\mu_0}{4 \pi} \int 4\pi\vec{J}(\overrightarrow{r}')\delta^3(\vec{r} - \overrightarrow{r}') d \tau^{\prime} = \mu_0\vec{J}(\vec{r})} $$
+$$ \boxed{\mathbf{B}(\mathbf{r})=\frac{\mu_0}{4 \pi} \int 4\pi\mathbf{J}(\mathbf{r}')\delta^3(\mathbf{r} - \mathbf{r}') d \tau^{\prime} = \mu_0\mathbf{J}(\mathbf{r})} $$
 This is not the end of the problem, as we are not working with a time-independent configuration.\\
 
-Continuing, we consider the time dependent electric field term in Eq [\ref{eq:maxwell-ampere-law}]:
-$$  \mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big] = \mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \underbrace{\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]}_{\text{cont. eq.}} \frac{\hat{R}}{{R^2}} d\tau' $$
-By the continuity equation:
-$$ \frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big] = -\nabla' \cdot \vec{J}(\overrightarrow{r}') $$
-Making the substitution in the integrand:
-$$ \mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \underbrace{\frac{\partial}{\partial t}\Big[\rho(\vec{r}, t)\Big]}_{\text{cont. eq.}} \frac{\hat{R}}{{R^2}} d\tau' \quad\rightarrow\quad -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \nabla' \cdot \vec{J}(\overrightarrow{r}') \frac{\hat{R}}{{R^2}} d\tau' $$
-Let $ f(\overrightarrow{r}') =: \frac{\hat{R}}{{R^2}} $ be our scalar function and $ \vec{J}(\overrightarrow{r}') $ be our vector field, using integration by parts:
-$$\int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime}=\underbrace{\oint_S f \vec{J} \cdot d \overrightarrow{a}^{\prime}}_{\text{surface term}}-\int_V \vec{J} \cdot \nabla^{\prime} f d \tau^{\prime}$$
-$f$ is only a function of the source coordinate $\overrightarrow{r}'$ with $\vec{r}$ held fixed.
-Assuming our surface term vanishes at infinity, we are left with
-$$ \int_V\left(\nabla^{\prime} \cdot \vec{J}\right) f d \tau^{\prime} = -\int_V \vec{J} \cdot \nabla^{\prime} f d \tau^{\prime} $$
-Lets replace our previous integral:
-$$ -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0}\int \nabla' \cdot \vec{J}(\overrightarrow{r}') \frac{\hat{R}}{{R^2}} d\tau' \quad\rightarrow\quad -\mu_0\epsilon_0 \frac{1}{4\pi\epsilon_0} \left[-\int_V \vec{J} \cdot \nabla^{\prime} \frac{\hat{R}}{{R^2}} d \tau^{\prime}\right] $$
-Cancelling the negatives and using $\nabla \cdot \left[\frac{\vec{r} - \overrightarrow{r}'}{|\vec{r} - \overrightarrow{r}'|^3}\right] = 4\pi\delta^3(\vec{r} - \overrightarrow{r}')$, we have
-$$ \boxed{\frac{\mu_0}{4\pi} \int_{V} 4\pi\vec{J}\delta^3(\vec{r} - \overrightarrow{r}')d\tau' \quad\rightarrow\quad \mu_0\vec{J}(\vec{r})}$$
-This is the additional (time-dependent $E$ field) term that is produced in our full Maxwell-Ampère law:
-$$ \nabla \times \vec{B}(\vec{r}) = \underbrace{\mu_0\vec{J}(\vec{r})}_{\text{static}} + \underbrace{\mu_0\epsilon_0 \frac{\partial}{\partial t} \Big[\vec{E}(\vec{r}, t)\Big]}_{\text{time dep. term: }\mu_0\vec{J}(\vec{r})} \quad\rightarrow\quad \underline{\boxed{\nabla \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r}) = 2\mu_0\vec{J}(\vec{r})}} $$
+Continuing, we consider the time‐dependent electric field term in Eq. \eqref{eq:maxwell-ampere-law}:
+\begin{equation}
+  \mu_0 \epsilon_0 \frac{\partial}{\partial t}\Big[\mathbf{E}(\mathbf{r},t)\Big]= \mu_0 \epsilon_0 \frac{1}{4\pi\epsilon_0}\int
+  \underbrace{\frac{\partial}{\partial t}\Big[\rho(\mathbf{r}',t)\Big]}_{\text{cont. eq.}}
+  \frac{\hat{R}}{R^2}d\tau'.
+\label{eq:displacement-current-term}
+\end{equation}
+Since the charge density $\rho$ changes in time but $\mathbf{J}$ and $\rho$ obey the continuity equation, we have
+$$
+  \frac{\partial \rho(\mathbf{r}',t)}{\partial t}=
+  -\nabla' \cdot \mathbf{J}(\mathbf{r}').
+$$
+Making this substitution,
+$$
+  \mu_0 \epsilon_0 \frac{1}{4\pi\epsilon_0}
+  \int 
+  \bigl[\nabla' \cdot \mathbf{J}(\mathbf{r}')\bigr]
+  \frac{\hat{R}}{R^2}d\tau'
+  \quad\longrightarrow\quad
+  -\mu_0 \epsilon_0 \frac{1}{4\pi\epsilon_0}
+  \int 
+  \bigl[\nabla' \cdot \mathbf{J}(\mathbf{r}')\bigr]
+  \frac{\hat{R}}{R^2}d\tau'.
+$$
 
-This result seems trivial and incorrect.
+Let's define
+$$
+  f(\mathbf{r}') := \frac{\hat{R}}{R^2}
+  \quad\text{and}\quad
+  \mathbf{J}(\mathbf{r}')
+  \quad\text{as our vector field.}
+$$
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
