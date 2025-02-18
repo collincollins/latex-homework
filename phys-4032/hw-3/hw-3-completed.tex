@@ -236,9 +236,27 @@ $$
 
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
-
-
-
-
+\section*{Problem 2}
+Calculate the force of magnetic attraction between the northern and southern hemispheres of a uniformly charged spinning spherical shell, with radius $R$, angular velocity $\omega$, and surface charge density $\sigma$. [This is the same as Prob. 5.42, but this time use the Maxwell stress tensor and Eq. 8.22.].
+\subsubsection*{------------------------------------------Solution-----------------------------------------------}
+The Maxwell stress tensor $\overleftrightarrow{T}$ is
+$$
+T_{ij} = \frac{1}{\mu_0}\Big[B_i B_j - \frac{1}{2}\delta_{ij}B^2\Big]
+$$
+The force on a volume $V$ bounded by $\partial V$ is
+$$
+\mathbf{F}=\oint_{\partial V} \overrightarrow{T} \cdot d\mathbf{a}
+$$
+Since we want the \emph{vertical} ($z$)-component, we only consider this portion of the stress tensor:
+$$
+(\overrightarrow{T}\cdot d\mathbf{a})_z =\frac{1}{\mu_0} \Big[B_z (\mathbf{B}\cdot d\mathbf{a})-\frac{1}{2}B^2(d a_z)\Big]
+$$
+  To isolate the force on the upper hemisphere, we take \(\partial V\) to be the combination of
+\begin{itemize}
+\item A hemisphere of radius $R$ just outside the shell.
+\item The disk at $z=0$.
+\end{itemize}
+We will have to compute the integral over each portion and sum.\\
+\subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
