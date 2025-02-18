@@ -274,6 +274,42 @@ $$
 $$
 
 With these fields, we can evaluate the stress-tensor surface integrals over the hemisphere (using the $\mathbf{B}$ outside) and over the disk (using $\mathbf{B}$ inside).\\
+
+On the hemisphere just outside $r=R$, the area element is
+$$d\mathbf{a}=\big(R^2\sin\theta d\theta d\phi\big)\hat{\mathbf{r}},\quad(\theta \in [0,\tfrac{\pi}{2}],\phi \in [0,2\pi])
+$$
+The $z$-component of our area element is:
+$$
+d a_z=(R^2\sin\theta d\theta d\phi)\cos\theta
+$$
+
+\noindent
+The field on the hemisphere at $r=R$ is 
+$$
+\mathbf{B}_{\text{outside}}(r=R,\theta)=\frac{\mu_0m}{4\pi R^3}\Big(2\cos\theta\hat{\mathbf{r}}+\sin\theta \hat{\boldsymbol{\theta}}\Big)
+$$
+The terms in our tensor are:
+$$
+\boxed{B_z =\mathbf{B}\cdot \hat{\mathbf{z}}=\frac{\mu_0m}{4\pi R^3}\big(3\cos^2\theta -1\big)}
+$$
+$$
+\boxed{\mathbf{B}\cdot d\mathbf{a}=\frac{\mu_0m}{4\pi R^3}
+\big(2\cos\theta\big)\big(R^2\sin\theta d\theta d\phi\big)}
+$$
+$$
+\boxed{B^2=\left(\frac{\mu_0m}{4\pi R^3}\right)^2\left(4\cos^2\theta + \sin^2\theta\right)}
+$$
+
+The portion of the stress tensor that we are concerned with is 
+$$
+(\overrightarrow{T} \cdot d\mathbf{a})_z=\frac{1}{\mu_0}\Big[B_z(\mathbf{B}\cdot d\mathbf{a})-\frac12 B^2 \big(d a_z\big)
+\Big]
+$$
+The force is
+$$
+(F_{\text{hemi}})_z=\oint_{\partial S} \underbrace{\left[\frac{1}{\mu_0}\Big[B_z(\mathbf{B}\cdot d\mathbf{a})-\frac12 B^2 \big(d a_z\big)
+\Big]\right]}_{(\overrightarrow{T} \cdot d\mathbf{a})_z}
+$$
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
