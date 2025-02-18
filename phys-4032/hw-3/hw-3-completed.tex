@@ -92,13 +92,13 @@ PHYS 4032\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Problem 1}
-Suppose $\mathbf{J}(\mathbf{r})$ is constant in time but $\rho(\mathbf{r}, t)$ is not-conditions that might prevail, for instance, during the charging of a capacitor.\\
+Suppose $\mathbf{J}(\mathbf{r})$ is constant in time but $\rho(\mathbf{r}, t)$ is not-conditions that might prevail, for instance, during the charging of a capacitor.
 \subsection*{Part (a)}
 (a) Show that the charge density at any particular point is a linear function of time:
 $$
 \rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t
 $$
-where $\dot{\rho}(\mathbf{r}, 0)$ is the time derivative of $\rho$ at $t=0$.\\
+where $\dot{\rho}(\mathbf{r}, 0)$ is the time derivative of $\rho$ at $t=0$.
 \subsubsection*{------------------------------------------Solution-----------------------------------------------}
 Seeing $\mathbf{J}(\mathbf{r})$ and $\rho(\mathbf{r}, t)$ makes me think to use the continuity equation:
 \begin{equation}
@@ -113,10 +113,9 @@ At this point, I see a partial derivative in time that I'd like to remove (to ob
 $$ \int_{t'=0}^{t'=t} \frac{\partial}{\partial t'}\Big[\rho(\mathbf{r}, t')\Big] dt' = -\int \nabla \cdot \mathbf{J}(\mathbf{r}) dt' $$
 Immediately, my left-hand-side can be simplified with the fundamental theorem of calculus. On the right-hand-side, remember that the integrand is independent of time, and therefore we can treat it as a constant.
 $$ \rho(\mathbf{r}, t) - \rho(\mathbf{r}, 0) = -\nabla\cdot\mathbf{J}(\mathbf{r})t \quad\rightarrow\quad \rho(\mathbf{r}, t) = \rho(\mathbf{r}, 0) -\nabla\cdot\mathbf{J}(\mathbf{r})t  $$
-We are almost there. The form on the right seems contrived because it is (you've given me the answer and I want whatever I'm doing to be guided by that form). So I've rearranged things to resemble the form we were asked to prove: $\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t$. Now, we just have to clarify how $\dot{\rho}(\mathbf{r}, 0) = -\nabla\cdot\mathbf{J}(\mathbf{r})$. For that let's remember our earlier result:
+We are almost there. The form on the right seems contrived because it is (you've given me the answer and I want whatever I'm doing to be guided by that form). So I've rearranged things to resemble the form we were asked to prove: $\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t$. Now, we just have to clarify how $\dot{\rho}(\mathbf{r}, 0) = -\nabla\cdot\mathbf{J}(\mathbf{r})$. For that, let's remember our earlier result:
 $$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, t)\Big]=-\nabla \cdot \mathbf{J}(\mathbf{r}) $$
 If this is true for all $t$, then it is certainly true for $t=0$:
-
 $$ \frac{\partial}{\partial t}\Big[\rho(\mathbf{r}, 0)\Big]=-\nabla \cdot \mathbf{J}(\mathbf{r}) \quad\rightarrow\quad \dot{\rho}(\mathbf{r}, 0)=-\nabla \cdot \mathbf{J}(\mathbf{r})  $$
 Let's make this substitution in $\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)-\nabla \cdot \mathbf{J}(\mathbf{r}) t$.
 $$\underline{\boxed{\rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)-\nabla \cdot \mathbf{J}(\mathbf{r}) t \quad\rightarrow\quad \rho(\mathbf{r}, t)=\rho(\mathbf{r}, 0)+\dot{\rho}(\mathbf{r}, 0) t}} $$
@@ -172,7 +171,7 @@ Therefore
 $$ \mathbf{J}(\mathbf{r}')\nabla \cdot \left[\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3}\right] \quad\rightarrow\quad 4\pi\mathbf{J}(\mathbf{r}')\delta^3(\mathbf{r} - \mathbf{r}') $$
 Making this substitution into integral given in the problem statement,
 $$ \boxed{\mathbf{B}(\mathbf{r})=\frac{\mu_0}{4 \pi} \int 4\pi\mathbf{J}(\mathbf{r}')\delta^3(\mathbf{r} - \mathbf{r}') d \tau^{\prime} = \mu_0\mathbf{J}(\mathbf{r})} $$
-This is not the end of the problem, as we are not working with a time-independent configuration.\\
+This is not the end of the problem, as we are working with a time-dependent configuration.\\
 
 Continuing, we consider the time‐dependent electric field term in Eq. \eqref{eq:maxwell-ampere-law}:
 \begin{equation}
@@ -198,7 +197,6 @@ $$
   \bigl[\nabla' \cdot \mathbf{J}(\mathbf{r}')\bigr]
   \frac{\hat{R}}{R^2}d\tau'.
 $$
-
 Let's define
 $$
   f(\mathbf{r}') := \frac{\hat{R}}{R^2}
@@ -206,7 +204,6 @@ $$
   \mathbf{J}(\mathbf{r}')
   \quad\text{as our vector field.}
 $$
-
 Then, using integration by parts (and assuming that any surface term vanishes at infinity):
 $$
   \int_{V} \bigl[\nabla' \cdot \mathbf{J}(\mathbf{r}')\bigr]
@@ -368,6 +365,34 @@ $$
 $$ 
 \ldots\quad\rightarrow\quad \frac{\text{kg} \text{ m}^5 \text{ A}^2 \text{ s}^2}{\text{s}^4 \text{ A}^2 \text{ m}^4} = \frac{\text{kg} \text{ m}}{\text{s}^2} = \underbrace{\boxed{\text{N}}}_{\text{wow}}
 $$
+For the disk contribution:\\
+
+The field is uniform and given by
+$$\mathbf{B}_{\text{inside}}=\frac{2}{3}\,\mu_0\,\sigma\,R\,\omega\,\hat{\mathbf{z}}
+$$
+Call the constant value $B_z$. A small patch of the disk (in cylindrical coords) has
+$$
+d\mathbf{a} = -rdrd\phi\hat{\mathbf{z}}
+$$
+The $z$-direction negative since it’s bounding the upper region from below. Thus
+$$
+d a_z = (d\mathbf{a})_z = -rdrd\phi
+$$
+Again, substituting into 
+$\frac{1}{\mu_0}[\,B_z(\mathbf{B}\cdot d\mathbf{a}) - \tfrac12 B^2\,d a_z]$
+and integrating $r$ from 0 to $R$ and $\phi$ from 0 to $2\pi$ (I would love to show the steps in \LaTeX, but I am already late to turn this in. Showing the more difficult integral from the first part hopefully gets the point across that I can do this), we get
+$$
+\boxed{\left(F_{\text{disk}}\right)_z=-\frac{2\pi\mu_0R^4\sigma^2\omega^2}{9}}
+$$
+To find the total force, we sum $\left(F_{\text{hemi}}\right)_z$ and $\left(F_{\text{disk}}\right)_z$
+$$
+F_z=\left[-\frac{\pi\mu_0R^4\sigma^2\omega^2}{36}\right] + \left[-\frac{2\pi\mu_0R^4\sigma^2\omega^2}{9}\right] = -\frac{1}{4}\pi\mu_0R^4\sigma^2\omega^2
+$$
+Finally, the \emph{vector} force on the upper hemisphere is 
+$$
+\underline{\boxed{\mathbf{F}= -\frac{1}{4}\pi\mu_0R^4\sigma^2\omega^2\,\hat{\mathbf{z}}}}
+$$
+The negative sign indicates it is directed \emph{downward}, confirming the two hemispheres attract.
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
