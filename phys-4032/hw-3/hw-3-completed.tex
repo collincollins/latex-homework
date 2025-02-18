@@ -310,6 +310,39 @@ $$
 (F_{\text{hemi}})_z=\oint_{\partial S} \underbrace{\left[\frac{1}{\mu_0}\Big[B_z(\mathbf{B}\cdot d\mathbf{a})-\frac12 B^2 \big(d a_z\big)
 \Big]\right]}_{(\overrightarrow{T} \cdot d\mathbf{a})_z}
 $$
+
+Using our boxed definitions:
+$$
+\begin{align}
+	(F_{\text{hemi}})_z=\oint_{\partial S}\frac{1}{\mu_0}\Bigg[\underbrace{\frac{\mu_0m}{4\pi R^3}\big(3\cos^2\theta -1\big)}_{B_z}\underbrace{\left(\frac{\mu_0m}{4\pi R^3}
+\big(2\cos\theta\big)\big(R^2\sin\theta d\theta d\phi\big)\right)}_{\mathbf{B}\cdot d\mathbf{a}}- \\\ldots \frac12 \underbrace{\left(\frac{\mu_0m}{4\pi R^3}\right)^2\left(4\cos^2\theta + \sin^2\theta\right)}_{B^2} \underbrace{(R^2\sin\theta d\theta d\phi)\cos\theta}_{\big(d a_z\big)}
+\Bigg]
+\end{align}
+$$
+When we factor out the differentials and the $\left(\frac{\mu_0m}{4\pi R^3}\right)^2$ term, we have
+$$
+\begin{align}
+	(F_{\text{hemi}})_z=\frac{1}{\mu_0}\left(\frac{\mu_0m}{4\pi R^3}\right)^2\oint_{\partial V}\Bigg[\big(3\cos^2\theta -1\big)\left(2\cos\theta\right)- \\\ldots \frac12 \left(4\cos^2\theta + \sin^2\theta\right)\cos\theta
+\Bigg](R^2\sin\theta d\theta d\phi) \quad\rightarrow\quad\ldots
+\end{align}
+$$
+$$ 
+(F_{\text{hemi}})_z=\frac{1}{\mu_0}\left(\frac{\mu_0m}{4\pi R^3}\right)^2\oint_{\partial V}\Bigg[\big(6\cos^3\theta -2\cos\theta\big)- \frac12 \left(4\cos^3\theta + \sin^2\theta\cos{\theta}\right)\Bigg](R^2\sin\theta d\theta d\phi)
+$$
+$$ 
+(F_{\text{hemi}})_z=\frac{R^2}{\mu_0}\left(\frac{\mu_0m}{4\pi R^3}\right)^2\underbrace{\int_{\phi}}_{2\pi}\int_{\theta}\Bigg[\big(6\cos^3\theta -2\cos\theta\big)- \frac12 \left(4\cos^3\theta + \sin^2\theta\cos{\theta}\right)\Bigg](\sin\theta d\theta d\phi)
+$$
+$$ 
+(F_{\text{hemi}})_z=\frac{2\pi R^2}{\mu_0}\left(\frac{\mu_0m}{4\pi R^3}\right)^2\int_{\theta=0}^{\theta=\frac{\pi}{2}}\Bigg[\big(6\cos^3\theta -2\cos\theta\big)- \frac12 \left(4\cos^3\theta + \sin^2\theta\cos{\theta}\right)\Bigg](\sin\theta d\theta)
+$$
+At this point this portion of the problem has been reduced to quadrature. The command I gave Wolfram Mathematica is:
+\begin{verbatim}
+	Integrate[
+	(-2 Cos[a] + 6 Cos[a]^3) Sin[a] + 
+	(-4 Cos[a]^3 - Cos[a] Sin[a]^2)/2,
+	 {a, 0, Pi/2}
+	]
+\end{verbatim}
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
