@@ -283,7 +283,6 @@ $$
 d a_z=(R^2\sin\theta d\theta d\phi)\cos\theta
 $$
 
-\noindent
 The field on the hemisphere at $r=R$ is 
 $$
 \mathbf{B}_{\text{outside}}(r=R,\theta)=\frac{\mu_0m}{4\pi R^3}\Big(2\cos\theta\hat{\mathbf{r}}+\sin\theta \hat{\boldsymbol{\theta}}\Big)
@@ -337,12 +336,38 @@ $$
 $$
 At this point this portion of the problem has been reduced to quadrature. The command I gave Wolfram Mathematica is:
 \begin{verbatim}
-	Integrate[
-	(-2 Cos[a] + 6 Cos[a]^3) Sin[a] + 
-	(-4 Cos[a]^3 - Cos[a] Sin[a]^2)/2,
-	 {a, 0, Pi/2}
-	]
+Integrate[
+Sin[a] (
+ -2 Cos[a] + 6 Cos[a]^3 + (-4 Cos[a]^3 - Cos[a] Sin[a]^2)/2
+        ),
+{a, 0, Pi/2}
+]
 \end{verbatim}
+And the result is $-\frac{1}{8}$.\\
+
+The value of $\left(F_{\text{hemi}}\right)_z$ is:
+
+$$ \left(F_{\text{hemi}}\right)_z = -\frac{1}{8}\frac{2\pi R^2}{\mu_0}\left(\frac{\mu_0m}{4\pi R^3}\right)^2 \quad\rightarrow\quad -\frac{\pi R^2}{4\mu_0} \left(\frac{\mu_0^2m^2}{16\pi^2R^6}\right) \quad\rightarrow\quad -\frac{\mu_0m^2}{64\pi R^4}$$
+Since $m=\frac{4}{3} \pi R^3(\sigma \omega R)$,
+$$ \boxed{\left(F_{\text{hemi}}\right)_z = -\frac{\mu_0}{64\pi R^4} \left(\frac{16}{9}\pi^2 R^6 \left(\sigma^2\omega^2R^2\right)\right) \quad\rightarrow\quad -\frac{\pi\mu_0R^4\sigma^2\omega^2}{36}}$$
+I have absolutely no clue if this is correct, so the least I can do is make sure the units check out:
+$$
+\underbrace{\left[\mu_0\right]}_{\frac{\mathrm{kg}\,\mathrm{m}}{\mathrm{s}^2\,\mathrm{A}^2}}
+\times
+\underbrace{\left[R^4\right]}_{\mathrm{m}^4}
+\times
+\underbrace{\left[\sigma^2\right]}_{\left(\frac{\mathrm{C}}{\mathrm{m}^2}\right)^2}
+\times
+\underbrace{\left[\omega^2\right]}_{\left(\mathrm{s}^{-1}\right)^2}
+=
+\left(\frac{\mathrm{kg}\,\mathrm{m}}{\mathrm{s}^2\,\mathrm{A}^2}\right)
+\left(\mathrm{m}^4\right)
+\left(\frac{\mathrm{C}}{\mathrm{m}^2}\right)^2
+(\mathrm{s}^{-1})^2 \quad\rightarrow\quad\ldots
+$$
+$$ 
+\ldots\quad\rightarrow\quad \frac{\text{kg} \text{ m}^5 \text{ A}^2 \text{ s}^2}{\text{s}^4 \text{ A}^2 \text{ m}^4} = \frac{\text{kg} \text{ m}}{\text{s}^2} = \underbrace{\boxed{\text{N}}}_{\text{wow}}
+$$
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
