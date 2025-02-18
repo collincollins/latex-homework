@@ -257,6 +257,23 @@ $$
 \item The disk at $z=0$.
 \end{itemize}
 We will have to compute the integral over each portion and sum.\\
+
+The net effect inside a uniformly rotating charge distribution is a constant magnetic field. For a thin shell, (I looked this part up)
+$$
+\mathbf{B}_{\text{inside}}=\frac{2}{3}\mu_0\sigma R\omega\hat{\mathbf{z}}
+$$
+Outside for ($r > R$), the spinning shell behaves like a magnetic dipole. \\
+
+Its dipole moment is (I also looked this part up because the bulk of this problem seemed to be about actually using the stress tensor)
+$$m = \Big(\sigma\omega R\Big) \Big(\frac{4}{3}\pi R^3\Big)=\frac{4}{3}\pi R^4\sigma\omega
+$$
+So the magnetic field outside is that of a dipole of strength $m$ aligned along $\hat{\mathbf{z}}$ (from a previous Griffiths problem):
+$$
+\mathbf{B}_{\text{outside}}(r,\theta)=\frac{\mu_0m}{4\pi r^3}\Big[2\cos\theta\hat{\mathbf{r}}+\sin\theta\hat{\boldsymbol{\theta}}
+\Big]
+$$
+
+With these fields, we can evaluate the stress-tensor surface integrals over the hemisphere (using the $\mathbf{B}$ outside) and over the disk (using $\mathbf{B}$ inside).\\
 \subsubsection*{-----------------------------------------------------------------------------------------------------}
 
 \end{document}
